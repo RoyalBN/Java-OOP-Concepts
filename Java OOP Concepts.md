@@ -14,8 +14,6 @@ L'idée derrière l'héritage en Java est que vous pouvez créer de nouvelles cl
 
 Nous pouvons utiliser l'héritage lorsque nous savons qu'il existe une relation "est un" entre un enfant et sa classe parent. Voici quelques exemples : Une personne est un être humain. Un chat est un animal.
 
-
-
 # Overriding
 
 ### Qu'est-ce que le concept d'overriding ?
@@ -30,8 +28,6 @@ L'avantage de la redéfinition est la possibilité de définir un comportement s
 
 Le but du Overriding est que si la classe dérivée veut donner sa propre implémentation, elle peut le faire en remplaçant la méthode de la classe parent. Lorsque nous appelons cette méthode surchargée, elle exécute la méthode de la classe enfant, pas la classe parent.
 
-
-
 # Polymorphisme
 
 ### Qu'est-ce que le concept de polymorphisme ?
@@ -45,8 +41,6 @@ Le polymorphisme permet d'écrire une méthode capable de traiter correctement d
 ### Quand l'utiliser ?
 
 La raison pour laquelle vous utilisez le polymorphisme est lorsque vous construisez des frameworks génériques qui prennent tout un tas d'objets différents avec la même interface. Lorsque vous créez un nouveau type d'objet, vous n'avez pas besoin de modifier le cadre pour s'adapter au nouveau type d'objet, tant qu'il suit les "règles" de l'objet.
-
-
 
 # Abstraction
 
@@ -109,8 +103,6 @@ classDiagram
     }
 ```
 
-
-
 # Encapsulatation
 
 ### Qu'est-ce que le concept d'encapsulation ?
@@ -125,20 +117,46 @@ L'encapsulation nous permet de modifier le code ou une partie du code sans avoir
 
 L'encapsulation est utilisée pour masquer les valeurs ou l'état d'un objet de données structuré à l'intérieur d'une classe, empêchant ainsi l'accès direct des parties non autorisées.
 
-
-
 # Interfaces
 
 ### Qu'est-ce que le concept d'interface ?
 
+Une interface est un type abstrait utilisé pour spécifier un comportement que les classes doivent implémenter. Une classe qui implémente une interface doit implémenter toutes les méthodes non par défaut décrites dans l'interface, ou être une classe abstraite.
+
 ### Pourquoi l'utiliser ?
 
+Les interfaces servent à créer des comportements génériques : si plusieurs classes doivent obéir à un comportement particulier, on créé une interface décrivant ce comportement, on est la fait implémenter par les classes qui en ont besoin.
+
 ### Quand l'utiliser ?
+
+Envisagez d'utiliser des interfaces si : 
+
+- Vous vous attendez à ce que des classes non liées implémententent votre interface. Par exemple, de nombreux objets non liés peuvent implémenter une interface sérialisable.
+
+- Vous souhaitez spécifier le comportement d'un type de données particulier, mais vous ne vous souciez pas de savoir qui implémente son comportement.
+
+- Vous souhaitez tirer parti de l'héritage multiple de type.
+
+
 
 # Packages
 
 ### Qu'est-ce que les packages ?
 
+Le package est un mécanisme permettant d'encapsuler un groupe de classes, de sous-packages et d'interfaces.
+
 ### Pourquoi l'utiliser ?
 
-### Quand l'utiliser
+Les packages sont utilisés pour  prrévenir les conflits de noms. Par exemple, il peut y avoir deux classes avec le nom `Employee`dans deux packages, `college.staff.cse.Employee` et `college.staff.ee.Employee` .
+
+### Quand l'utiliser ?
+
+Les packages doivent être utilisés pour :
+
+- Prévenir les conflits de noms. 
+
+- Faciliter la recherche/localisation et l'utilisation des classes, des interfaces, des énumérations et des annotations.
+
+- Fournir un accès contrôlé : protected et default ont un contrôle d'accès au niveau du package. Un membre protégé est accessible par les classes du même package et ses sous-classes. Un membre par défaut (sans aucun spécificateur d'accès) est accessible uniquement par les classes du même package.
+
+- Les packages peuvent être considérés comme une encapsulation de données (ou un masquage de données).
