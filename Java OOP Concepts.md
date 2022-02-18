@@ -6,6 +6,29 @@ L'héritage permet à une sous-classe d'hériter des attributs et méthodes d'un
 
 *Exemple* : Supposons une classe parent `Humain`  possèdant des méthodes telles que respirer(), parler() manger(), boire()... Si une classe enfant hérite de la classe `Humain` , alors cette sous-classe héritera des attributs et méthodes de la classe `Humain`.
 
+```mermaid
+classDiagram
+    Humain<|-- Homme
+    Humain<|-- Femme
+    Humain: +boire()
+    Humain: +manger()
+    Humain: +parler()
+    class Homme{
+      +String nom
+      +String prenom
+      -boire()
+      -manger()
+      -parler()
+    }
+    class Femme{
+      +String nom
+      +String prenom
+      -boire()
+      -manger()
+      -parler()
+    }
+```
+
 ### Pourquoi l'utiliser ?
 
 L'idée derrière l'héritage en Java est que vous pouvez créer de nouvelles classes qui sont construites sur des classes existantes. Lorsque vous héritez d'une classe existante, vous pouvez réutiliser les méthodes et les champs de la classe parent.
@@ -13,6 +36,8 @@ L'idée derrière l'héritage en Java est que vous pouvez créer de nouvelles cl
 ### Quand l'utiliser ?
 
 Nous pouvons utiliser l'héritage lorsque nous savons qu'il existe une relation "est un" entre un enfant et sa classe parent. Voici quelques exemples : Une personne est un être humain. Un chat est un animal.
+
+<div style="page-break-after: always"></div>
 
 # Overriding
 
@@ -28,11 +53,33 @@ L'avantage de la redéfinition est la possibilité de définir un comportement s
 
 Le but du Overriding est que si la classe dérivée veut donner sa propre implémentation, elle peut le faire en remplaçant la méthode de la classe parent. Lorsque nous appelons cette méthode surchargée, elle exécute la méthode de la classe enfant, pas la classe parent.
 
+<div style="page-break-after: always"></div>
+
 # Polymorphisme
 
 ### Qu'est-ce que le concept de polymorphisme ?
 
 Le polymorphisme c'est la capacité d'un objet à prendre plusieurs formes, c'est-à-dire de réaliser la même action mais de manières différentes.
+
+*Exemple* : pensez à une superclasse appelée `Animal`  qui a une méthode appelée  `animalSound()`. Les sous-classes d'animaux pourraient être des cochons, des chats, des chiens, des oiseaux et ils ont aussi leur propre implémentation d'un son d'animal (le cochon ronfle, et le chat miaule, etc.)
+
+
+
+```mermaid
+classDiagram
+    Animal<|-- Chat
+    Animal<|-- Chien
+    Animal: +animalSound()
+    class Chat{
+      -animalSound()
+    }
+    class Chien{
+      -animalSound()
+    }
+    
+
+
+```
 
 ### Pourquoi l'utiliser ?
 
@@ -41,6 +88,8 @@ Le polymorphisme permet d'écrire une méthode capable de traiter correctement d
 ### Quand l'utiliser ?
 
 La raison pour laquelle vous utilisez le polymorphisme est lorsque vous construisez des frameworks génériques qui prennent tout un tas d'objets différents avec la même interface. Lorsque vous créez un nouveau type d'objet, vous n'avez pas besoin de modifier le cadre pour s'adapter au nouveau type d'objet, tant qu'il suit les "règles" de l'objet.
+
+<div style="page-break-after: always"></div>
 
 # Abstraction
 
@@ -103,6 +152,8 @@ classDiagram
     }
 ```
 
+<div style="page-break-after: always"></div>
+
 # Encapsulatation
 
 ### Qu'est-ce que le concept d'encapsulation ?
@@ -117,11 +168,13 @@ L'encapsulation nous permet de modifier le code ou une partie du code sans avoir
 
 L'encapsulation est utilisée pour masquer les valeurs ou l'état d'un objet de données structuré à l'intérieur d'une classe, empêchant ainsi l'accès direct des parties non autorisées.
 
+<div style="page-break-after: always"></div>
+
 # Interfaces
 
 ### Qu'est-ce que le concept d'interface ?
 
-Une interface est un type abstrait utilisé pour spécifier un comportement que les classes doivent implémenter. Une classe qui implémente une interface doit implémenter toutes les méthodes non par défaut décrites dans l'interface, ou être une classe abstraite.
+Une interface est un type abstrait utilisé pour spécifier un comportement que les classes doivent implémenter. Une classe qui implémente une interface doit implémenter toutes les méthodes non par défaut décrites dans l'interface, ou être une classe abstraite. 
 
 ### Pourquoi l'utiliser ?
 
@@ -137,7 +190,7 @@ Envisagez d'utiliser des interfaces si :
 
 - Vous souhaitez tirer parti de l'héritage multiple de type.
 
-
+<div style="page-break-after: always"></div>
 
 # Packages
 
